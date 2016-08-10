@@ -16,10 +16,11 @@ a {
     outline: 0
 }
 a:visited {
-    color: #3d5a7f
+    color: #3d5a7f;
 }
 a:hover {
-    text-decoration: underline
+    color: #69b5f8;
+    text-decoration: none;
 }
 
 
