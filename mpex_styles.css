@@ -1,3 +1,26 @@
+/* Links */
+.mpex_links a {
+    position: relative;
+    display: inline-block;
+    margin-left: 35px;
+    color: #747d94;
+    text-decoration: none;
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-indent: 12px;
+}
+a {
+    color: #3d5a7f;
+    text-decoration: none;
+    outline: 0
+}
+a:visited {
+    color: #3d5a7f
+}
+a:hover {
+    text-decoration: underline
+}
 
 
 /* Buttons */
