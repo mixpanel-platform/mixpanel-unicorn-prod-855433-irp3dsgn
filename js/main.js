@@ -53,11 +53,11 @@ jQuery(document).ready(function($){
 		links
 	********************/
 	var linksWrapper = $('#links .cd-box'),
-		linksHtml = buttonsWrapper.html(),
-		containerHtml = $('<div class="cd-box"></div>').insertAfter(buttonsWrapper),
+		linksHtml = linksWrapper.html(),
+		containerHtml = $('<div class="cd-box"></div>').insertAfter(linksWrapper),
 		linksHtmlText = linksHtml.split('</a>');
 
-	$.map(buttonsHtmlText, function(value){
+	$.map(linksHtmlText, function(value){
 		if(value.indexOf('a') >= 0 ) {
 			var splitText = value.split('class="'),
 				block1 = splitText[0]+'class="';
