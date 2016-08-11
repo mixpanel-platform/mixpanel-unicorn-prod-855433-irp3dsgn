@@ -828,46 +828,46 @@ section:nth-of-type(6) h2::before {
   background: #61adf0;
 }
 .cd-colors li:nth-of-type(1) .cd-color-swatch::before {
-  background: #759de8;
+  background: #61adf0;
 }
 .cd-colors li:nth-of-type(1) .cd-color-swatch::after {
-  background: #497fe0;
+  background: #61adf0;
 }
 .cd-colors li:nth-of-type(2) .cd-color-swatch {
   background: #3f516b;
 }
 .cd-colors li:nth-of-type(2) .cd-color-swatch::before {
-  background: #262627;
+  background: #3f516b;
 }
 .cd-colors li:nth-of-type(2) .cd-color-swatch::after {
-  background: #0d0d0d;
+  background: #3f516b;
 }
 .cd-colors li:nth-of-type(3) .cd-color-swatch {
   background: #666666;
 }
 .cd-colors li:nth-of-type(3) .cd-color-swatch::before {
-  background: #e87a75;
+  background: #666666;
 }
 .cd-colors li:nth-of-type(3) .cd-color-swatch::after {
-  background: #e05049;
+  background: #666666;
 }
 .cd-colors li:nth-of-type(4) .cd-color-swatch {
   background: #c1d1dc;
 }
 .cd-colors li:nth-of-type(4) .cd-color-swatch::before {
-  background: #f3f3f3;
+  background: #c1d1dc;
 }
 .cd-colors li:nth-of-type(4) .cd-color-swatch::after {
-  background: #d9d9d9;
+  background: #c1d1dc;
 }
 .cd-colors li:nth-of-type(5) .cd-color-swatch {
   background: #ffffff;
 }
 .cd-colors li:nth-of-type(5) .cd-color-swatch::before {
-  background: white;
+  background: #ffffff;
 }
 .cd-colors li:nth-of-type(5) .cd-color-swatch::after {
-  background: #f2f2f2;
+  background: #ffffff;
 }
 @media only screen and (min-width: 768px) {
   .cd-colors li {
