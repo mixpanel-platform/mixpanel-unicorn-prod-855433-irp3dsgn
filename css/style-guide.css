@@ -36,7 +36,7 @@ header {
   background-color: #5f8ee4;
   width: 120px;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   .cd-logo {
     width: 180px;
   }
@@ -50,7 +50,7 @@ header {
   color: #ffffff;
   border-color: #262627;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   .cd-main-nav li a {
     color: #7d7d82;
   }
@@ -504,7 +504,7 @@ header nav {
   -o-transform: translateY(6px);
   transform: translateY(6px);
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   .cd-nav-trigger {
     display: none;
   }
@@ -537,7 +537,7 @@ header nav {
 .cd-main-nav li:first-of-type a {
   border-top-width: 1px;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   .cd-main-nav {
     position: static;
     display: table;
