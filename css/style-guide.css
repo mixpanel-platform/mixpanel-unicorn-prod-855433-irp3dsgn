@@ -537,7 +537,7 @@ header nav {
 .cd-main-nav li:first-of-type a {
   border-top-width: 1px;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 700px) {
   .cd-main-nav {
     position: static;
     display: table;
