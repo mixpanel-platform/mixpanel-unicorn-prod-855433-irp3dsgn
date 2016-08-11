@@ -1,17 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/cache/8ea4a91cd70389613b271278f237f282/bundle/reports.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather' rel='stylesheet' type='text/css'>
+    
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/mp-christine/mp-christine/master/platform/assets/survey/survey_export.css">
 
-  	
-	<title>Style Guide | CodyHouse</title>
-</head>
-<body class="mixpanel-platform-body">
-  <div class="mixpanel-platform-section" style="height:4000px;">
-	
-</div>
-</body>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/mixpanel-platform/mixpanel-unicorn-1-855433-K9huT8m/master/styles.css">
+    <script src="https://cdn.rawgit.com/mp-christine/mp-christine/master/platform/assets/json2csv.js"></script>
+    <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
+  </head>
+  <body class="mixpanel-platform-body">
+    <div class="mixpanel-platform-section">
+      <button disabled="true" class="button button_primary" id="csv_export">Please Wait...</button>
+    </div>
+    <script>
+      var json_to_csv = new json2csv();
+      var survey_id;
+      var last_response = undefined;
+      var json_object = [];
+        
+       $("body").delegate( "#csv_export", "click", function() {
+            var csv = "data:text/csv;charset=utf-8," + json_to_csv.jsonToCSV(json_object);
+            window.open(encodeURI(csv));
+        });
+          
+        var runQuery = function() {
+          var queryParams = {
+            surveyID: survey_id
+          };
+          var script = $('#cq').html();
+          script = $.trim(script);
+          MP.api.custom_query(script, queryParams)
+          .done(function(resp) {
+                var properties = {};
+                _.each(resp[0], function(v,k) {
+                  var props = {};
+                  props = {Property: k, count: v};
+                  properties[k] = {count: v};
+                  json_object.push(props);
+                });
+                last_response = properties;
+                 $('<div></div>').appendTo('body').MPTable({ // create table; try scrolling horizontally over demo below
+                    data: last_response,
+                    showPercentages: false,
+                    firstColHeader: 'Property'
+                });
+                $('#csv_export').html("Export to CSV").prop("disabled",false);
+                
+            }).fail(function($xhr) {
+                $('#csv_export').html("Export to CSV").prop("disabled",false);
+                // Somehow the request is not parsed into JSON event with application/json header
+                var error = $xhr.request.responseText;
+                var error_text = "Requst failed";
+                try {
+                    error_text = JSON.parse(error).error;
+                } catch (err) {
+                    error_text = $xhr.request.responseText;
+                }
+            });
+        }
+    </script>
+    <script type="text/cq" id="cq">
+        function main() {
+          return People()
+          .map(function(user) {
+            var properties = {"---Total Profiles ---" : 1};
+             _.each(user.properties, function(v,k) {
+             properties[k] = 1;
+            });
+            return properties;
+          }).reduce(mixpanel.reducer.object_merge())
+        }
+    </script>
+    <script>
+      runQuery();
+    </script>
+  </body>
 </html>
