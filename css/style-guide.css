@@ -106,7 +106,7 @@ xPage title
 main > h1 {
   color: #19191a;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1600px) {
   main > h1 {
     /* title goes into the header on big devices */
     color: #ffffff;
@@ -134,7 +134,7 @@ h1 {
     font-size: 3.2rem;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   h1 {
     font-size: 4rem;
   }
@@ -537,7 +537,7 @@ header nav {
 .cd-main-nav li:first-of-type a {
   border-top-width: 1px;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   .cd-main-nav {
     position: static;
     display: table;
@@ -570,7 +570,7 @@ header nav {
     border-top: none;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1600px) {
   .cd-main-nav {
     display: none;
   }
@@ -658,7 +658,7 @@ header nav {
     visibility: hidden;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1600px) {
   .cd-download {
     right: 5%;
   }
@@ -674,12 +674,12 @@ main > h1 {
   text-align: center;
   margin: 3em 0;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1024px) {
   main {
     padding-top: 80px;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1600px) {
   main {
     max-width: none;
     padding: 120px 0 50px;
