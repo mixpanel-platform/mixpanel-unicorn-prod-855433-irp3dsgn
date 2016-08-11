@@ -50,27 +50,6 @@ jQuery(document).ready(function($){
 	});
 
 	/*******************
-		links
-	********************/
-	var linksWrapper = $('#links .cd-box'),
-		linksHtml = linksWrapper.html(),
-		containerHtml = $('<div class="cd-box"></div>').insertAfter(linksWrapper),
-		linksHtmlText = linksHtml.split('</a>');
-
-	$.map(linksHtmlText, function(value){
-		if(value.indexOf('a') >= 0 ) {
-			var splitText = value.split('href="'),
-				block1 = splitText[0]+'href="';
-				block2 = splitText[1].split('"');
-				
-			var wrapperElement = $('<p></p>').text(block1),
-				spanElement = $('<span></span>').text(block2[0]);
-			spanElement.appendTo(wrapperElement);
-			wrapperElement.appendTo(containerHtml);
-			wrapperElement.append('"'+block2[1]+'&lt;/a&gt;');
-		}
-	});
-	/*******************
 		typography
 	********************/
 	var heading = $('#typography h1'),
