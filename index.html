@@ -13,7 +13,7 @@
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
   </head>
   <body class="mixpanel-platform-body">
-    <div class="mixpanel-platform-section">
+    <div class="mixpanel-platform-section" style="height:4000px;">
       <button disabled="true" class="button button_primary" id="csv_export">Please Wait...</button>
     </div>
     <script>
@@ -75,8 +75,6 @@
           }).reduce(mixpanel.reducer.object_merge())
         }
     </script>
-    <script>
-      runQuery();
-    </script>
+
   </body>
 </html>
