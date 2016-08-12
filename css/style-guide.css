@@ -78,10 +78,6 @@ xNavigation
   background-color: white;
 }
 
-.cd-download {
-  /* download button top-right visible on big devices */
-  background-color: #323234;
-}
 .no-touch .cd-download:hover {
   background-color: #3f3f41;
 }
