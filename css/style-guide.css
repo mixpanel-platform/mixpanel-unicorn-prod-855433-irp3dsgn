@@ -78,9 +78,6 @@ xNavigation
   background-color: white;
 }
 
-.no-touch .cd-download:hover {
-  background-color: #3f3f41;
-}
 .cd-download span {
   /* tooltip */
   background: #5f8ee4;
