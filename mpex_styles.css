@@ -1,15 +1,11 @@
 /* Links */
-.mixpanel-platform-body a {
+a {
     position: relative;
     display: inline-block;
-    color: #747d94;
-    text-decoration: none;
+    color: #3d5a7f;
     font-family: "Helvetica Neue",sans-serif;
     font-weight: 500;
     font-size: 13px;
-}
-a {
-    color: #3d5a7f;
     text-decoration: none;
     outline: 0
 }
